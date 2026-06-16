@@ -1,0 +1,28 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+
+public class MyMoleClickRouter : MonoBehaviour
+{
+    [SerializeField] private LayerMask moleLayer;
+
+    private void Update()
+    {
+        if (Mouse.current == null || !Mouse.current.leftButton.wasPressedThisFrame) return;
+
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
+
+        if (Camera.main == null)
+            return;
+
+        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+        if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, moleLayer))
+            return;
+
+        MyMole mole = hit.collider.gameObject.GetComponent<MyMole>();
+        if (mole != null)
+            mole.Collect();
+    }
+}
