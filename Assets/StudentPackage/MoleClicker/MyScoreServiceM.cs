@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+//현재 점수 담당 (점수 증가, 초기화)
 public class MyScoreServiceM : IScoreServiceM
 {
     public int CurrentScore { get; private set; }

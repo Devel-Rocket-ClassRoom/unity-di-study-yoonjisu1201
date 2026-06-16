@@ -17,5 +17,7 @@ public class MyMoleClickerLifeTimeScope : LifetimeScope
         builder.RegisterComponentInHierarchy<MyAudioManagerM>().As<IAudioServiceM>();
         builder.RegisterComponentInHierarchy<MyMoleSpawner>();
         builder.RegisterComponentInHierarchy<MyGameHudControllerM>();
+
+        builder.RegisterEntryPoint<MoleGameDirector>(Lifetime.Singleton).AsSelf();
     }
 }
