@@ -93,6 +93,7 @@ public class MyMoleSpawner : MonoBehaviour
 
         Transform spawnPoint = m_spawnPoints[spawnIndex];
 
+        //m_Resolver를 쓰는 이유 -> 두더지 프리팹을 생성할 때 VContainer 주입까지 같이 해주기 위해서 
         MyMole mole = m_Resolver.Instantiate(
             m_MolePrefab,
             spawnPoint.position,

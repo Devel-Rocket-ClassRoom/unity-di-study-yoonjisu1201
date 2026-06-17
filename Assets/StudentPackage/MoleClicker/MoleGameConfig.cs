@@ -17,14 +17,14 @@ public class MoleGameConfig
 
     //올라오거나 내려가는 데 걸리는 시간
     [SerializeField]
-    private float m_MoleMoveDuration = 0.3f;
+    private float m_MoleMoveDuration = 0.2f;
 
     //올라와서 멈추는 시간
     [SerializeField]
     private float m_MoleVisibleDuration = 1.7f;
 
     [SerializeField]
-    private float m_MoleUpYOffset = 1.2f;
+    private float m_MoleUpYOffset = 0.7f;
 
     [SerializeField]
     private float m_MoleHiddenYOffset = -1.0f;
